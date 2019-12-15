@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Warsztaty z JSa!</title>
+    <style>
+
+body, html {
+    background: linear-gradient(#999090, #990000);
+    padding:0px;
+    margin: 0px;
+    height: 100vh;
+}
+#kolory {
+  position: fixed;
+  padding:10px;
+  margin: 10px;
+  background-color: beige;
+  border: brown dotted;
+  height: 10vh;
+}
+    
+    </style>
+  </head>
+  <body>
+    <div id="kolory">
+      <label for="inputKolorUp"> Góra:</label>
+      <input id="inputKolorUp" name="gora" type="color" value="#ffffff" />
+      <label for="inputKolorDown"> Dół:</label>
+      <input id="inputKolorDown" name="dol" type="color" value="#ffffff" />
+      <button id="przyciskUstaw">Ustaw kolor</button>
+    </div>
+  </body>
+  <script>
+    let tlo = "linear-gradient";
+    function ustawKolor(kolor) {
+
+        document.body.style.background = kolor;
+    }
+
+    function zmienKolory(event) {
+
+        let up = document.getElementById("inputKolorUp").value;
+        let down = document.getElementById("inputKolorDown").value;
+        wiadomosc = "linear-gradient"+ "(" + up + ", " + down  + ")";
+
+        ustawKolor(wiadomosc);
+    }
+
+    document.getElementById("przyciskUstaw").onclick = zmienKolory;
+
+
+  </script>
+</html>

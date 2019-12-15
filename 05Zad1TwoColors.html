@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Warsztaty z JSa!</title>
+    <style>
+
+body, html {
+    padding:0px;
+    margin: 0px;
+}
+#kolory {
+  position: fixed;
+  padding:10px;
+  margin: 10px;
+  background-color: beige;
+  border: brown dotted;
+  height: 10vh;
+}
+
+#gora, #dol {
+  width:100%;
+  height:50vh;
+}     
+    </style>
+  </head>
+  <body>
+    <div id="kolory">
+      <label for="inputKolorUp"> Góra:</label>
+      <input id="inputKolorUp" name="gora" type="color" value="#ffffff" />
+      <label for="inputKolorDown"> Dół:</label>
+      <input id="inputKolorDown" name="dol" type="color" value="#ffffff" />
+      <button id="przyciskUstaw">Ustaw kolor</button>
+    </div>
+    <div id="gora"></div>
+    <div id="dol"></div>
+  </body>
+  <script>
+    
+    function ustawKolor(kolor, idElementu) {
+        document.getElementById(idElementu).style.backgroundColor = kolor;
+    }
+
+    function zmienKolory(event) {
+
+        ustawKolor(document.getElementById("inputKolorUp").value, "gora");
+        ustawKolor(document.getElementById("inputKolorDown").value, "dol");
+    }
+
+    document.getElementById("przyciskUstaw").onclick = zmienKolory;
+
+
+  </script>
+</html>

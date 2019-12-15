@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Warsztaty z JSa!</title>
+  </head>
+  <body>
+    <input type="text" id="wiadomosc" placeholder="Co chcesz napisać?" />
+    <input type="text" id="licznik" placeholder="Ile razy?" />
+    <button id="przycisk">Pisz!</button>
+    <pre id="oknoZWiadomoscia"></pre>
+  </body>
+
+  <script>
+    function pokazWiadomosc() {
+        let liczbaPowtorzen = document.getElementById("licznik").value;
+        let wiadomosc = document.getElementById("wiadomosc").value;
+
+        let rezultat = "";
+        for (let i = 1; i <= liczbaPowtorzen; i++) {
+            rezultat = rezultat + i + " : " + wiadomosc + "\n";
+            document.getElementById("oknoZWiadomoscia").innerText = rezultat;
+        }
+    }
+    document.getElementById("przycisk").onclick = pokazWiadomosc;
+  </script>
+</html>

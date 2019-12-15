@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Warsztaty z JSa!</title>
+  </head>
+  <body>
+    <input type="text" id="produkt" placeholder="Co chcesz kupić?" />
+    <button id="przycisk">Dodaj</button>
+    <ul id="list"> </ul>
+  </body>
+
+  <script>
+    
+    function dodajElement() {
+        let produkt = document.getElementById("produkt").value;
+        let noweLi = document.createElement("li");
+        noweLi.innerText = produkt;
+        let lista = document.getElementById("list");
+        lista.appendChild(noweLi);
+
+
+      document.getElementById("oknoZWiadomoscia").innerText = rezultat;
+    }
+    document.getElementById("przycisk").onclick = dodajElement;
+  </script>
+</html>
